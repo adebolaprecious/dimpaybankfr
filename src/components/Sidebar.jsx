@@ -27,6 +27,7 @@ const Sidebar = () => {
         <NavLink to="/transfer" className="nav-link"><FaMoneyBillWave /> <span>Transfer</span></NavLink>
         <NavLink to="/cards" className="nav-link"><FaCreditCard /> <span>Cards</span></NavLink>
         <NavLink to="/withdraw" className="nav-link"><FaHandHoldingUsd /> <span>Withdraw</span></NavLink>
+          <NavLink to="/deposit" className="nav-link"><FaHandHoldingUsd /> <span>Deposit</span></NavLink>
         {/* <NavLink to="/loans" className="nav-link"><FaHandHoldingUsd /> <span>Loans</span></NavLink> */}
         <NavLink to="/settings" className="nav-link"><FaCog /> <span>Settings</span></NavLink>
         <NavLink className="nav-link" onClick={handleLogout}>
