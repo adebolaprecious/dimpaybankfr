@@ -1,185 +1,178 @@
 import React from "react";
-import "./Landingpage.css"
 import { useNavigate } from "react-router-dom";
+import "./Landingpage.css";
+
 const LandingPage = () => {
   const navigate = useNavigate();
+
   return (
-    <div className="main-wrapper"> 
- <div className='hero'>
-     <div className="left-section">
-        <div className="badge">
-          ✨ We just shipped v1.1!
+    <div className="lp-root">
+
+      {/* ── Navbar ── */}
+      {/* <nav className="lp-nav">
+        <div className="lp-nav-brand">
+          <span className="lp-nav-icon">🏦</span>
+          <span className="lp-nav-name">DimPay</span>
         </div>
-           <h1 className="main-heading">
-          Banking Made simple.<br />
-          <span className="highlight">Secure and Smart.</span>
-        </h1>
-         <p className="sub-text">
-           Manage your money make payment and grow your wealth- all in one place
-        </p>
-          <div className="features">
-          <div className="feature">🔒 Bank-level security</div>
-          <div className="feature">✅ Verified members only</div>
+        <div className="lp-nav-links">
+          <a href="#features">Features</a>
+          <a href="#products">Products</a>
+          <a href="#stats">Stats</a>
         </div>
-          <div className="cta-buttons">
-          <button className="btn btn-primary" onClick={()=>(navigate('/login'))}>Get Started Free</button>
-          <button className="btn btn-secondary" onClick={()=>(navigate('/about'))}>Learn More</button>
+        <div className="lp-nav-actions">
+          <button className="lp-btn-ghost" onClick={() => navigate('/login')}>Login</button>
+          <button className="lp-btn-solid" onClick={() => navigate('/register')}>Sign Up</button>
         </div>
- </div>
-           <div className="phone-container">
-        {/* Transaction Volume Box */}
-        <div className="volume-box">
-          <div style={{
-            width: '42px',
-            height: '42px',
-            background: '#22c55e',
-            borderRadius: '12px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '25px'
-          }}>
-            ↔️
+      </nav> */}
+
+      {/* ── Hero ── */}
+      <section className="lp-hero">
+        <div className="lp-hero-left">
+          <div className="lp-badge">✨ We just shipped v1.1!</div>
+          <h1 className="lp-heading">
+            Banking Made<br />
+            <span className="lp-highlight">Simple, Secure</span><br />
+            and Smart.
+          </h1>
+          <p className="lp-subtext">
+            Manage your money, make payments and grow your wealth — all in one place.
+          </p>
+          <div className="lp-features-row">
+            <span className="lp-feature-pill">🔒 Bank-level security</span>
+            <span className="lp-feature-pill">✅ Verified members only</span>
           </div>
+          <div className="lp-cta-row">
+            <button className="lp-btn-solid lg" onClick={() => navigate('/login')}>Get Started Free</button>
+            <button className="lp-btn-ghost lg" onClick={() => navigate('/register')}>Learn More</button>
+          </div>
+        </div>
+
+        <div className="lp-hero-right">
+          {/* Floating stat top */}
+          <div className="lp-float lp-float-top">
+            <div className="lp-float-icon">↔️</div>
+            <div>
+              <div className="lp-float-label">Transaction volume</div>
+              <div className="lp-float-val">₦2.4M+</div>
+            </div>
+          </div>
+
+          {/* Phone */}
+          <div className="lp-phone">
+            <div className="lp-phone-screen">
+              <div className="lp-phone-header">
+                <span>DIMPAY</span>
+                <span>Welcome back 👋</span>
+              </div>
+              <div className="lp-phone-balance">
+                <div className="lp-phone-bal-label">Available Balance</div>
+                <div className="lp-phone-bal-amount">₦11,123,700</div>
+              </div>
+              <div className="lp-phone-label">Recent Transactions</div>
+              <div className="lp-phone-tx">
+                <div className="lp-phone-tx-row"><span>Transfer</span><span className="red">-₦5,000</span></div>
+                <div className="lp-phone-tx-row"><span>Deposit</span><span className="green">+₦50,000</span></div>
+                <div className="lp-phone-tx-row"><span>Airtime</span><span className="red">-₦1,000</span></div>
+              </div>
+              <div className="lp-phone-actions">
+                <div className="lp-phone-action">Add Cash</div>
+                <div className="lp-phone-action">Withdraw</div>
+                <div className="lp-phone-action">Send Cash</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Floating stat bottom */}
+          <div className="lp-float lp-float-bottom">
+            <span>👥</span>
+            <div>
+              <div className="lp-float-label">Trusted by</div>
+              <div className="lp-float-val">100+ Users</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Why Choose ── */}
+      <section className="lp-section" id="features">
+        <div className="lp-section-label">Why DimPay</div>
+        <h2 className="lp-section-title">Built for modern banking</h2>
+        <div className="lp-cards-grid">
+          {[
+            { icon: '🔒', title: 'Secure Banking', desc: 'Top-level encryption keeps your money and data safe at all times.' },
+            { icon: '⚡', title: 'Easy Payments', desc: 'Send and receive money instantly with zero stress.' },
+            { icon: '📊', title: 'Smart Analytics', desc: 'Track expenses and grow your savings with real-time insights.' },
+            { icon: '🛟', title: '24/7 Support', desc: "We're here for you anytime, anywhere — day or night." },
+          ].map((c) => (
+            <div className="lp-card" key={c.title}>
+              <div className="lp-card-icon">{c.icon}</div>
+              <h3>{c.title}</h3>
+              <p>{c.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Products ── */}
+      <section className="lp-section lp-section-alt" id="products">
+        <div className="lp-section-label">Our Products</div>
+        <h2 className="lp-section-title">Everything you need</h2>
+        <div className="lp-cards-grid">
+          {[
+            { icon: '💰', title: 'Savings Accounts', desc: 'High interest rates & secure savings plans.' },
+            { icon: '💳', title: 'Credit Cards', desc: 'Flexible rewards and valuable cashback.' },
+            { icon: '🏦', title: 'Personal Loans', desc: 'Quick approval and low interest rates.' },
+            { icon: '📈', title: 'Invest Funds', desc: 'Grow your wealth and funds with confidence.' },
+          ].map((c) => (
+            <div className="lp-card lp-card-product" key={c.title}>
+              <div className="lp-card-icon">{c.icon}</div>
+              <h3>{c.title}</h3>
+              <p>{c.desc}</p>
+              <button className="lp-card-btn">Learn More</button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Stats ── */}
+      <section className="lp-stats" id="stats">
+        {[
+          { val: '2M+', label: 'Happy Customers' },
+          { val: '250+', label: 'Branches Worldwide' },
+          { val: '99.9%', label: 'Uptime' },
+          { val: '15+', label: 'Years of Trust' },
+        ].map((s) => (
+          <div className="lp-stat" key={s.label}>
+            <h2>{s.val}</h2>
+            <p>{s.label}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="lp-cta-section">
+        <div className="lp-cta-inner">
           <div>
-            <div style={{ fontSize: '10px', color: '#aaa', 
-                transition: 'transform 0.3s ease',
-               hover: { transform: "translateY(-8px)" }
-            }}>Transaction volume</div>
-            <div style={{ fontWeight: 600 }}>₦0</div>
+            <h2>Ready for the future of banking?</h2>
+            <p>Open an account in minutes and take control of your finances.</p>
+            <button className="lp-btn-solid lg" onClick={() => navigate('/register')}>
+              Open Account Now
+            </button>
           </div>
+          <div className="lp-cta-icon">🏦</div>
         </div>
+      </section>
 
-        {/* Phone Mockup */}
-        <div className="phone">
-          <div className="phone-screen">
-            <div className="phone-header">
-              <div>DIMPAY</div>
-              <div>welcome back user</div>
-            </div>
-
-            <div className="balance">
-              Available Balance<br />
-              <strong>₦11,123,700</strong>
-            </div>
-
-            <div style={{ marginTop: '40px', fontSize: '14px' }}>Recent Transactions</div>
-
-            {/* Quick Actions */}
-            <div className="quick-actions">
-              <div className="action-btn">Add Cash</div>
-              <div className="action-btn">Withdraw</div>
-              <div className="action-btn">Send Cash</div>
-            </div>
-          </div>
+      {/* ── Footer ── */}
+      <footer className="lp-footer">
+        <div className="lp-footer-brand">
+          <span className="lp-nav-icon">🏦</span>
+          <span>DimPay</span>
         </div>
+        <p>© 2025 DimPay. All rights reserved.</p>
+      </footer>
 
-        {/* Trust Badge */}
-        <div className="trust-badge">
-          👥 Trusted by<br />
-          <strong>100+ Users</strong>
-        </div>
-      </div>
-<section className="landing-section">
-  {/* WHY CHOOSE FINBANK */}
-  <div className="why-choose">
-    <h2>Why choose FinBank?</h2>
-    <div className="feature-cards">
-      <div className="feature-card">
-        <h1><div className="card-icon">🔒</div></h1>
-        <h3>Secure Banking</h3>
-        <p>Top-level security to keep your money safe.</p>
-      </div>
-
-      <div className="feature-card">
-        <div className="card-icon">⚡</div>
-        <h3>Easy Payments</h3>
-        <p>Send and receive money instantly with zero stress.</p>
-      </div>
-
-      <div className="feature-card">
-        <div className="card-icon">📊</div>
-        <h3>Smart Analytics</h3>
-        <p>Track expenses and grow your savings.</p>
-      </div>
-
-      <div className="feature-card">
-        <div className="card-icon">🛟</div>
-        <h3>24/7 Support</h3>
-        <p>We’re here for you anytime, anywhere.</p>
-      </div>
     </div>
-  </div>
-
-  {/* OUR PRODUCTS */}
-  <div className="our-products">
-    <h2>Our Products</h2>
-    <div className="product-cards">
-      <div className="product-card">
-        <div className="card-icon">💰</div>
-        <h3>Savings Accounts</h3>
-        <p>High interest rates & secure savings plans.</p>
-        <button>Learn More</button>
-      </div>
-
-      <div className="product-card">
-        <div className="card-icon">💳</div>
-        <h3>Credit Cards</h3>
-        <p>Flexible rewards and value cashback.</p>
-        <button>Learn More</button>
-      </div>
-
-      <div className="product-card">
-        <div className="card-icon">🏦</div>
-        <h3>Personal Loans</h3>
-        <p>Quick approval and low interest.</p>
-        <button>Learn More</button>
-      </div>
-
-      <div className="product-card">
-        <div className="card-icon">📈</div>
-        <h3>Invest Funds</h3>
-        <p>Grow your wealth, funds with confidence.</p>
-        <button>Learn More</button>
-      </div>
-    </div>
-  </div>
-
-  {/* STATS */}
-  <div className="stats-section">
-    <div className="stat-box">
-      <h2>2M+</h2>
-      <p>Happy Customers</p>
-    </div>
-    <div className="stat-box">
-      <h2>250+</h2>
-      <p>Branches Worldwide</p>
-    </div>
-    <div className="stat-box">
-      <h2>99.9%</h2>
-      <p>Uptime</p>
-    </div>
-    <div className="stat-box">
-      <h2>15+</h2>
-      <p>Years of Trust</p>
-    </div>
-  </div>
-
-  {/* OPEN ACCOUNT NOW */}
-  <div className="open-account">
-    <div className="open-left">
-      <h2>Ready to experience the future of banking?</h2>
-      <p>Open an account in minutes and take control of your finances.</p>
-      <button onClick={()=>(navigate('/register'))}>Open Account Now</button>
-    </div>
-    <div className="open-right">
-      <div className="bank-icon">🏦</div>
-    </div>
-  </div>
-</section>
-      </div>
-     </div>
-
   );
 };
 

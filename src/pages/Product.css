@@ -7,7 +7,7 @@ box-sizing: border-box;
 .products-page {
 width: 100%;
 padding: 120px 8%;
-background: #ffffff;
+ background: rgba(7,7,15,0.85);
 font-family: Arial, sans-serif;
 color: #111;
 }
@@ -47,7 +47,7 @@ margin-bottom: 100px;
 }
 
 .product-card {
-background: #fff;
+background: linear-gradient(135deg, #5b3df5, #7b61ff);
 border: 1px solid #eee;
 border-radius: 20px;
 padding: 35px;
@@ -71,7 +71,7 @@ margin-bottom: 20px;
 }
 
 .savings {
-background: #f3ebff;
+background: linear-gradient(135deg, #5b3df5, #7b61ff);
 }
 
 .cards {
@@ -123,7 +123,7 @@ gap: 25px;
 }
 
 .benefit-box {
-background: #f8f8ff;
+background: linear-gradient(135deg, #5b3df5, #7b61ff);
 padding: 30px;
 border-radius: 18px;
 border: 1px solid #eee;

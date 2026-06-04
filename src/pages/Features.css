@@ -7,7 +7,7 @@ box-sizing: border-box;
 .features-page {
 width: 100%;
 padding: 100px 8%;
-background: #ffffff;
+ background: rgba(7,7,15,0.85);
 font-family: Arial, sans-serif;
 color: #111;
 }
@@ -47,7 +47,7 @@ margin-bottom: 100px;
 }
 
 .feature-card {
-background: #fff;
+background: linear-gradient(135deg, #5b3df5, #7b61ff);
 border: 1px solid #eee;
 border-radius: 20px;
 padding: 35px;

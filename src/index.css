@@ -102,3 +102,11 @@ font-weight: 700;
   transform: translateY(-2px);
   transition: 0.9s;
 }
+html,
+body,
+#root {
+  background: #07070f;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}

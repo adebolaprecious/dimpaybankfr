@@ -7,7 +7,7 @@ box-sizing: border-box;
 .about-page {
 width: 100%;
 padding: 120px 8%;
-background: #ffffff;
+background: rgba(7,7,15,0.85);
 font-family: Arial, sans-serif;
 color: #111;
 }

@@ -1,186 +1,224 @@
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
 
-    /* body {
-      color: #050505;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      padding: 20px 20px;
-    } */
-
-  
-.navbar{
-  width: 100%;
-  padding: 20px 60px;
-  background: white;
-  display: flex;
-  justify-content: space-between;
-  align-self: center;
-  box-shadow: 0 4px 20px rgb(0, 0, 0.05);
-  position: fixed;
-    top: 0.1px;
-      z-index: 1000;
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.navbar-logo h2{
-color: #4f46e5;
-font-size:28px;
-font-weight: 700;
-}
-.navbar-links{
-  display: flex;
-  align-items: center;
-  gap: 35px;
-  list-style: none;
-}
-.navbar-links li{
-   position: relative;
-}
-.navbar-links a{
-  text-decoration: none;
-  color: #222;
-  font-size: 16px;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.navbar-links a:hover{
-  color: #4f46e5;
-}
-.dropdown-menu {
-  position: absolute;
-  top: 35px;
-  left: 0;
-  background: white;
-  width: 220px;
-  border-radius: 10px;
-  padding: 15px 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-  display: none;
-  z-index: 100;
-}
-
-.dropdown-menu li{
-  padding: 12px 20px;
-}
-
-.dropdown-menu li a{
-  font-size: 15px;
-}
-
-.dropdown:hover .dropdown-menu {
-  display:block;
-}
-.navbar-buttons {
-  display:flex;
-  gap: 15px;
-}
-
-.login-btn{
-  padding: 10px 22px;
-  border: 1px solid #4f46e5;
-  background: transparent;
-  color: #4f46e5;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.Sign-up{
-    padding: 10px 22px;
-  border: 1px solid #4f46e5;
-  background: #4f46e5;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.login-btn:hover, .Sign-up:hover{
-  transform: translateY(-2px);
-  transition: 0.9s;
-}
-
-/* Hamburger hidden on desktop */
-.hamburger {
-display: none;
-font-size: 28px;
-cursor: pointer;
-}
-
-/* Mobile buttons hidden by default */
-.mobile-buttons {
-display: none;
-flex-direction: column;
-gap: 10px;
-margin-top: 20px;
-}
-
-/* ===================== */
-/* 📱 MOBILE RESPONSIVE */
-/* ===================== */
-
-@media (max-width: 768px) {
 
 .navbar {
-padding: 15px 20px;
+  width: 100%;
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Sora', sans-serif;
+
+  /* Default: transparent over dark hero */
+  background: rgba(7, 7, 15, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
-/* Hide desktop nav */
+/* Once scrolled — slightly more opaque but still dark */
+.navbar.scrolled {
+  background: rgba(7, 7, 15, 0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ── Logo ── */
+.navbar-logo h2 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+/* ── Nav Links ── */
 .navbar-links {
-position: absolute;
-top: 70px;
-left: 0;
-width: 100%;
-flex-direction: column;
-background: white;
-padding: 20px;
-gap: 20px;
-
-display: none;
-box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
 }
 
-/* Show menu when active */
-.navbar-links.active {
-display: flex;
+.navbar-links li {
+  position: relative;
 }
 
-/* Hide desktop buttons */
-.navbar-buttons {
-display: none;
+.navbar-links a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
 }
 
-/* Show hamburger */
-.hamburger {
-display: block;
+.navbar-links a:hover {
+  color: #fff;
 }
 
-/* Dropdown becomes static in mobile */
+/* ── Dropdown ── */
 .dropdown-menu {
-position: static;
-display: none;
-box-shadow: none;
-padding: 10px 0;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: #13131f;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 200px;
+  border-radius: 12px;
+  padding: 8px 0;
+  display: none;
+  z-index: 200;
+  list-style: none;
+}
+
+.dropdown-menu li {
+  padding: 0;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 18px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: background 0.15s, color 0.15s;
+}
+
+.dropdown-menu li a:hover {
+  background: rgba(124, 58, 237, 0.1);
+  color: #a78bfa;
 }
 
 .dropdown:hover .dropdown-menu {
-display: none;
+  display: block;
 }
 
-/* Make dropdown clickable on mobile */
-.dropdown {
-width: 100%;
+/* ── Buttons ── */
+.navbar-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
-.dropdown:active .dropdown-menu {
-display: block;
+.login-btn {
+  padding: 9px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  transition: border-color 0.2s, background 0.2s;
 }
 
-/* Show mobile buttons */
+.login-btn:hover {
+  border-color: rgba(167, 139, 250, 0.5);
+  background: rgba(124, 58, 237, 0.08);
+}
+
+.signup-btn {
+  padding: 9px 20px;
+  border: none;
+  background: #7c3aed;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.signup-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 1;
+}
+
+/* ── Mobile buttons ── */
 .mobile-buttons {
-display: flex;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+  width: 100%;
 }
+
+.mobile-buttons .login-btn,
+.mobile-buttons .signup-btn {
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 14px 20px;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(10, 10, 20, 0.97);
+    backdrop-filter: blur(20px);
+    padding: 20px 24px 28px;
+    gap: 18px;
+    display: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-buttons {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .dropdown-menu {
+    position: static;
+    background: rgba(255, 255, 255, 0.04);
+    border: none;
+    border-radius: 8px;
+    padding: 4px 0;
+    display: none;
+    width: 100%;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .mobile-buttons {
+    display: flex;
+  }
 }
