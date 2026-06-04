@@ -1,0 +1,160 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: sans-serif;
+}
+
+.register-page {
+min-height: 100vh;
+display: flex;
+background: #f8f8ff;
+}
+
+/* LEFT SIDE */
+.register-left {
+flex: 1;
+padding: 60px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.logo h2 {
+color: #5b3df5;
+margin-bottom: 40px;
+}
+
+.register-content h1 {
+font-size: 40px;
+margin-bottom: 10px;
+color: #111;
+}
+
+.register-content p {
+color: #666;
+margin-bottom: 30px;
+}
+
+.register-form {
+max-width: 500px;
+}
+
+.register-form label {
+display: block;
+margin-bottom: 8px;
+margin-top: 18px;
+font-weight: 600;
+}
+
+.register-form input {
+width: 100%;
+padding: 16px;
+border: 1px solid #ddd;
+border-radius: 10px;
+outline: none;
+font-size: 15px;
+}
+
+.name-row {
+display: flex;
+gap: 20px;
+}
+
+.name-row div {
+flex: 1;
+}
+
+.terms {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-top: 20px;
+}
+
+.terms input {
+width: auto;
+}
+
+.terms span {
+font-size: 14px;
+color: #555;
+}
+
+.register-form button {
+width: 100%;
+margin-top: 30px;
+padding: 16px;
+border: none;
+border-radius: 10px;
+background: #5b3df5;
+color: white;
+font-size: 17px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.register-form button:hover {
+background: #4528d8;
+}
+
+.signin-link {
+margin-top: 25px;
+text-align: center;
+}
+
+.signin-link a {
+color: #5b3df5;
+font-weight: bold;
+text-decoration: none;
+}
+
+/* RIGHT SIDE */
+.register-right {
+flex: 1;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 40px;
+}
+
+.register-right img {
+width: 100%;
+max-width: 950px;
+border-radius: 20px;
+object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+.register-page {
+flex-direction: column;
+}
+
+.register-left {
+padding: 40px 25px;
+}
+
+.register-content h1 {
+font-size: 30px;
+}
+
+.register-right {
+padding: 20px;
+}
+}
+
+@media (max-width: 576px) {
+.name-row {
+flex-direction: column;
+gap: 0;
+}
+
+.terms {
+align-items: flex-start;
+}
+
+.register-content h1 {
+font-size: 26px;
+}
+}

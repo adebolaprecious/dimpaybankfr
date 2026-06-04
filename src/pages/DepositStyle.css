@@ -1,0 +1,532 @@
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+
+
+body {
+
+  font-family: 'Inter', system-ui, sans-serif;
+
+  background: #f8fafc;
+
+}
+
+
+
+.deposit-dashboard {
+
+  display: flex;
+
+  min-height: 100vh;
+
+}
+
+
+
+/* Sidebar */
+
+.deposit-sidebar {
+
+  width: 260px;
+
+  background: white;
+
+  border-right: 1px solid #e2e8f0;
+
+  padding: 20px 0;
+
+  height: 100vh;
+
+  position: fixed;
+
+}
+
+
+
+.deposit-logo {
+
+  padding: 0 24px 30px;
+
+  border-bottom: 1px solid #e2e8f0;
+
+}
+
+
+
+.deposit-logo h2 {
+
+  color: #1e40af;
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+}
+
+
+
+.nav-menu {
+
+  padding: 20px 0;
+
+}
+
+
+
+.nav-item {
+
+  padding: 14px 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #64748b;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: all 0.3s;
+
+}
+
+
+
+.nav-item:hover,
+
+.nav-item.active {
+
+  background: #f1f5f9;
+
+  color: #1e40af;
+
+  border-left: 4px solid #3b82f6;
+
+}
+
+
+
+/* Main Content */
+
+.main-content {
+
+  margin-left: 260px;
+
+  flex: 1;
+
+  padding: 30px;
+
+  width: calc(100% - 260px);
+
+}
+
+
+
+.header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 40px;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #e2e8f0;
+
+}
+
+
+
+.header h1 {
+
+  font-size: 28px;
+
+  color: #1e2937;
+
+}
+
+
+
+.user-info {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+}
+
+
+
+.user-icon {
+
+  font-size: 24px;
+
+  color: #64748b;
+
+}
+
+
+
+/* Form Card */
+
+.form-container {
+
+  max-width: 520px;
+
+  margin: 0 auto;
+
+}
+
+
+
+.form-card {
+
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+.form-title {
+
+  text-align: center;
+
+  margin-bottom: 32px;
+
+  color: #1e2937;
+
+  font-size: 26px;
+
+}
+
+
+
+.form-group {
+
+  margin-bottom: 24px;
+
+}
+
+
+
+.form-group label {
+
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-weight: 600;
+
+  color: #475569;
+
+}
+
+
+
+.form-group input,
+
+.form-group select,
+
+.form-group textarea {
+
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 8px;
+
+  font-size: 16px;
+
+  transition: all 0.3s;
+
+}
+
+
+
+.form-group input:focus,
+
+.form-group select:focus,
+
+.form-group textarea:focus {
+
+  border-color: #10b981;
+
+  outline: none;
+
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+
+}
+
+
+
+.form-group textarea {
+
+  min-height: 100px;
+
+  resize: vertical;
+
+}
+
+
+
+.deposit-btn {
+
+  width: 100%;
+
+  padding: 16px;
+
+  background: #2f10db;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 8px;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s;
+
+}
+
+
+
+.deposit-btn:hover {
+
+  background: #1374f3;
+
+}
+
+
+
+/* Success Modal */
+
+.success-modal {
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 1000;
+
+}
+
+
+
+.success-card {
+
+  background: white;
+
+  padding: 40px 30px;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  max-width: 420px;
+
+  width: 90%;
+
+  position: relative;
+
+  animation: popIn 0.4s ease-out;
+
+}
+
+
+
+@keyframes popIn {
+
+  from { transform: scale(0.7); opacity: 0; }
+
+  to { transform: scale(1); opacity: 1; }
+
+}
+
+
+
+.success-icon {
+
+  font-size: 80px;
+
+  color: #10b981;
+
+  margin-bottom: 16px;
+
+}
+
+
+
+.success-subtitle {
+
+  color: #64748b;
+
+  margin-bottom: 24px;
+
+}
+
+
+
+.success-details {
+
+  background: #f8fafc;
+
+  border-radius: 12px;
+
+  padding: 20px;
+
+  margin: 20px 0;
+
+  text-align: left;
+
+}
+
+
+
+.detail-row {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 10px 0;
+
+  border-bottom: 1px solid #e2e8f0;
+
+}
+
+
+
+.detail-row:last-child {
+
+  border: none;
+
+}
+
+
+
+.close-btn {
+
+  position: absolute;
+
+  top: 15px;
+
+  right: 15px;
+
+  background: none;
+
+  border: none;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  color: #64748b;
+
+}
+
+
+
+.done-btn {
+
+  width: 100%;
+
+  padding: 14px;
+
+  background: #1e40af;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 8px;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+}
+
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+  .sidebar {
+
+    width: 80px;
+
+  }
+
+  .nav-item span {
+
+    display: none;
+
+  }
+
+  .main-content {
+
+    margin-left: 80px;
+
+    padding: 20px;
+
+  }
+
+}
+
+
+
+@media (max-width: 480px) {
+
+  .form-card {
+
+    padding: 25px 20px;
+
+  }
+
+}
+

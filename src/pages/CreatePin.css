@@ -1,0 +1,87 @@
+.create-pin-container {
+  min-height: 100vh;
+  background: #f5f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.create-pin-card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.create-pin-card h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #1f2937;
+  font-size: 28px;
+}
+
+.create-pin-card p {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+.pin-input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  outline: none;
+  font-size: 16px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.pin-input:focus {
+  border-color: #6c4cff;
+  box-shadow: 0 0 0 3px rgba(108, 76, 255, 0.15);
+}
+
+.create-pin-btn {
+  width: 100%;
+  background: #6c4cff;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+
+.create-pin-btn:hover {
+  background: #5738f5;
+}
+
+.create-pin-btn:active {
+  transform: scale(0.98);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .create-pin-card {
+    padding: 30px 20px;
+  }
+
+  .create-pin-card h2 {
+    font-size: 24px;
+  }
+
+  .pin-input {
+    padding: 13px;
+  }
+
+  .create-pin-btn {
+    padding: 13px;
+  }
+}
