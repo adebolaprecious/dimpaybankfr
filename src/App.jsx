@@ -26,6 +26,7 @@ import SettingsPage from './pages/Settings'
 import AdminDashboard from './pages/AdminDashboard'
 import AdminRoute from './pages/AdminRoutes'
 import Footer from './components/Footer'
+import Profile from './pages/Profile'
 
 const App = () =>{
     const cookies = new Cookies();
@@ -34,7 +35,7 @@ const App = () =>{
 return(
   <>
     {location.pathname !== "/dashboard" && location.pathname !== "/transfer" && location.pathname !== "/transactions" && location.pathname !=="/deposit" && location.pathname !== "/withdraw" && 
- location.pathname !== "/settings" && location.pathname !== "/cards" && location.pathname !== "/paybills" && location.pathname !== "/admin" && <Navbar />}
+ location.pathname !== "/settings" && location.pathname !== "/cards" && location.pathname !== "/paybills" && location.pathname !== "/admin" && location.pathname !== "/profile" && <Navbar />}
     
      <Routes>
       <Route path="/" element={<LandingPage />} />
@@ -55,6 +56,7 @@ return(
                 <Route path="/recenttransactions" element={<RecentTransactions />} />
                  <Route path="/transactions" element={<TransactionHistory />} />
                  <Route path="/settings" element={<SettingsPage/>} />
+                 <Route path="/profile" element={<Profile />} />
                  <Route path="/admin" element={
   <AdminRoute>
     <AdminDashboard />

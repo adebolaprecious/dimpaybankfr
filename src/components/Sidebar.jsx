@@ -3,7 +3,7 @@ import "../css/Sidebar.css";
 import Cookies from "universal-cookie";
 import {
   FaHome, FaExchangeAlt, FaCreditCard,
-  FaMoneyBillWave, FaHandHoldingUsd, FaCog, FaUserShield, FaSignOutAlt
+  FaMoneyBillWave, FaHandHoldingUsd, FaCog, FaUserShield, FaSignOutAlt, FaUserCircle
 } from "react-icons/fa";
 import { useAuth } from "../context/AuthContext";
 
@@ -12,6 +12,9 @@ const cookies = new Cookies();
 const Sidebar = ({ onClose }) => {
   const { user } = useAuth();
   const isAdmin = user?.role === "admin";
+    console.log("user:", user);
+  console.log("role:", user?.role);
+  console.log("isAdmin:", isAdmin);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -45,6 +48,9 @@ const Sidebar = ({ onClose }) => {
         <NavLink to="/deposit" className="nav-link" onClick={onClose}>
           <FaHandHoldingUsd /> <span>Deposit</span>
         </NavLink>
+        <NavLink to="/profile" className="nav-link" onClick={onClose}>
+  <FaUserCircle /> <span>Profile</span>
+</NavLink>
         <NavLink to="/settings" className="nav-link" onClick={onClose}>
           <FaCog /> <span>Settings</span>
         </NavLink>

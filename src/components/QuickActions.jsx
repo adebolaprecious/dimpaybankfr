@@ -34,7 +34,7 @@ const QuickActions = () => {
       name: "Top Up",
       icon: <FaMobileAlt />,
       color: "#8b5cf6",
-      route: "/topup",
+      route: "/deposit",
     },
     {
       name: "Withdraw",

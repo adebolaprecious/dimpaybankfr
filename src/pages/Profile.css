@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+.profile-page {
+  padding: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Sora', sans-serif;
+}
+
+/* ── Loading ── */
+.profile-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.profile-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #1e1e2e;
+  border-top-color: #7c3aed;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Hero ── */
+.profile-hero {
+  background: #111118;
+  border: 1px solid #1e1e2e;
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7c3aed, #5b21ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.profile-hero-info {
+  flex: 1;
+  min-width: 160px;
+}
+
+.profile-hero-info h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 4px;
+}
+
+.profile-hero-info p {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0 0 10px;
+}
+
+.profile-verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.profile-balance-wrap {
+  text-align: right;
+}
+
+.profile-balance-wrap span {
+  font-size: 11px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.profile-balance-wrap h2 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 26px;
+  font-weight: 700;
+  color: #a78bfa;
+  margin: 4px 0 4px;
+}
+
+.profile-account-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.profile-account-row small {
+  font-size: 12px;
+  color: #4b5563;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.profile-copy-btn {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.profile-copy-btn:hover { color: #a78bfa; }
+
+/* ── Grid ── */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* ── Card ── */
+.profile-card {
+  background: #111118;
+  border: 1px solid #1e1e2e;
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.profile-card-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 0 0 18px;
+}
+
+.profile-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.profile-view-all {
+  background: rgba(124, 58, 237, 0.1);
+  color: #a78bfa;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-family: 'Sora', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.profile-tx-card { margin-bottom: 0; }
+
+/* ── Info List ── */
+.profile-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.profile-info-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-info-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.profile-info-icon.purple {
+  background: rgba(124, 58, 237, 0.1);
+  color: #a78bfa;
+}
+
+.profile-info-row > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile-info-row span {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.profile-info-row strong {
+  font-size: 13px;
+  color: #e5e7eb;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+/* ── Actions ── */
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  border-radius: 12px;
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid;
+  transition: opacity 0.2s;
+  width: 100%;
+}
+
+.profile-action-btn:hover { opacity: 0.8; }
+
+.profile-action-btn.purple {
+  background: rgba(124, 58, 237, 0.08);
+  border-color: rgba(124, 58, 237, 0.25);
+  color: #a78bfa;
+}
+
+.profile-action-btn.blue {
+  background: rgba(59, 130, 246, 0.08);
+  border-color: rgba(59, 130, 246, 0.25);
+  color: #60a5fa;
+}
+
+.profile-action-btn.green {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.25);
+  color: #10b981;
+}
+
+.profile-action-btn.red {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.25);
+  color: #ef4444;
+}
+
+/* ── Transactions ── */
+.profile-tx-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-tx-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid #1a1a28;
+}
+
+.profile-tx-row:last-child { border-bottom: none; }
+
+.profile-tx-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.profile-tx-icon.debit { background: rgba(239,68,68,0.1); color: #ef4444; }
+.profile-tx-icon.credit { background: rgba(16,185,129,0.1); color: #10b981; }
+
+.profile-tx-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile-tx-info strong {
+  font-size: 13px;
+  color: #e5e7eb;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.profile-tx-info span {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.profile-tx-amt {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.profile-tx-amt.debit { color: #ef4444; }
+.profile-tx-amt.credit { color: #10b981; }
+
+.profile-empty {
+  text-align: center;
+  padding: 32px;
+  color: #4b5563;
+}
+
+.profile-empty svg { font-size: 28px; margin-bottom: 8px; }
+.profile-empty p { font-size: 13px; margin: 0; }
+
+/* ── Modal ── */
+.profile-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+}
+
+.profile-modal {
+  background: #111118;
+  border: 1px solid #1e1e2e;
+  border-radius: 20px;
+  padding: 32px 28px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Sora', sans-serif;
+}
+
+.profile-modal-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin: 0 auto 16px;
+}
+
+.profile-modal-icon.success {
+  background: rgba(16,185,129,0.1);
+  border: 2px solid rgba(16,185,129,0.3);
+  color: #10b981;
+}
+
+.profile-modal-icon.error {
+  background: rgba(239,68,68,0.1);
+  border: 2px solid rgba(239,68,68,0.3);
+  color: #ef4444;
+}
+
+.profile-modal h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.profile-modal p {
+  font-size: 14px;
+  color: #9ca3af;
+  margin: 0 0 22px;
+  line-height: 1.6;
+}
+
+.profile-modal-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.profile-modal-btn.success { background: #7c3aed; color: #fff; border: none; }
+.profile-modal-btn.error { background: transparent; color: #e5e7eb; border: 1px solid #2e2e3e; }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .profile-page { padding: 16px; }
+  .profile-grid { grid-template-columns: 1fr; }
+  .profile-hero { flex-direction: column; text-align: center; }
+  .profile-balance-wrap { text-align: center; }
+  .profile-account-row { justify-content: center; }
+}

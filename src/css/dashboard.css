@@ -332,3 +332,117 @@ body {
     transform: translateX(0);
   }
 }
+
+/* ── SpendingChart ── */
+.chart-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.donut-wrap {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+}
+
+.donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.donut-label {
+  font-size: 10px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.donut-amount {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.chart-legend {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legend-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.legend-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-label {
+  font-size: 13px;
+  color: #e5e7eb;
+}
+
+.legend-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-percent {
+  font-size: 12px;
+  color: #6b7280;
+  min-width: 32px;
+  text-align: right;
+}
+
+.legend-amount {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: #a78bfa;
+  min-width: 80px;
+  text-align: right;
+}
+
+.chart-loading {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.chart-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #1e1e2e;
+  border-top-color: #7c3aed;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.chart-empty {
+  text-align: center;
+  padding: 40px 0;
+  color: #4b5563;
+  font-size: 13px;
+}
