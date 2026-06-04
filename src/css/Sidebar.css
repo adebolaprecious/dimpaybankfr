@@ -39,9 +39,10 @@
   border-radius: 12px;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 24px;
   font-size: 15.5px;
   transition: all 0.3s ease;
+  margin-top: 10px;
 }
 
 .nav-link span {

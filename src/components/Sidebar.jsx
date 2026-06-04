@@ -20,47 +20,45 @@ const Sidebar = ({ onClose }) => {
     navigate('/login');
   };
 
-  const handleClose = () => {
-    if (onClose) onClose();
-  };
-
   return (
     <aside className="sidebar">
       <div className="logo">
-        <span>Dimpay</span>
+        <span></span>
       </div>
 
       <nav>
-        <NavLink to="/dashboard" className="nav-link" onClick={handleClose}>
+        <NavLink to="/dashboard" className="nav-link" onClick={onClose}>
           <FaHome /> <span>Dashboard</span>
         </NavLink>
-        <NavLink to="/transactions" className="nav-link" onClick={handleClose}>
+        <NavLink to="/transactions" className="nav-link" onClick={onClose}>
           <FaExchangeAlt /> <span>Transactions</span>
         </NavLink>
-        <NavLink to="/transfer" className="nav-link" onClick={handleClose}>
+        <NavLink to="/transfer" className="nav-link" onClick={onClose}>
           <FaMoneyBillWave /> <span>Transfer</span>
         </NavLink>
-        <NavLink to="/cards" className="nav-link" onClick={handleClose}>
+        <NavLink to="/cards" className="nav-link" onClick={onClose}>
           <FaCreditCard /> <span>Cards</span>
         </NavLink>
-        <NavLink to="/withdraw" className="nav-link" onClick={handleClose}>
+        <NavLink to="/withdraw" className="nav-link" onClick={onClose}>
           <FaHandHoldingUsd /> <span>Withdraw</span>
         </NavLink>
-        <NavLink to="/deposit" className="nav-link" onClick={handleClose}>
+        <NavLink to="/deposit" className="nav-link" onClick={onClose}>
           <FaHandHoldingUsd /> <span>Deposit</span>
         </NavLink>
-        <NavLink to="/settings" className="nav-link" onClick={handleClose}>
+        <NavLink to="/settings" className="nav-link" onClick={onClose}>
           <FaCog /> <span>Settings</span>
         </NavLink>
-        <NavLink className="nav-link" onClick={() => { handleLogout(); handleClose(); }}>
-          <FaSignOutAlt /> <span>Logout</span>
-        </NavLink>
 
+        {/* ✅ Only renders for admin users */}
         {isAdmin && (
-          <NavLink to="/admin" className="nav-link admin-link" onClick={handleClose}>
+          <NavLink to="/admin" className="nav-link admin-link" onClick={onClose}>
             <FaUserShield /> <span>Admin</span>
           </NavLink>
         )}
+
+        <button className="nav-link" onClick={() => { handleLogout(); onClose?.(); }}>
+          <FaSignOutAlt /> <span>Logout</span>
+        </button>
       </nav>
     </aside>
   );

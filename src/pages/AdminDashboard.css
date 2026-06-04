@@ -480,3 +480,43 @@
   .user-detail-header { flex-direction: column; text-align: center; }
   .user-detail-balance { text-align: center; }
 }
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 56px;
+  }
+
+  /* Hide all text labels in the sidebar */
+  .admin-logo span,
+  .admin-nav-item span,
+  .admin-profile p,
+  .admin-profile small {
+    display: none;
+  }
+
+  /* Keep the logo icon only, centered */
+  .admin-logo {
+    justify-content: center;
+    padding: 20px 0;
+  }
+
+  /* Center nav icons */
+  .admin-nav-item {
+    justify-content: center;
+    padding: 12px 0;
+  }
+
+  /* Center footer icons, hide profile text */
+  .admin-sidebar-footer {
+    flex-direction: column;
+    padding: 12px 0;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .admin-main { margin-left: 56px; }
+
+  .admin-stats-grid { grid-template-columns: 1fr 1fr; }
+  .tx-controls { flex-direction: column; }
+  .user-detail-header { flex-direction: column; text-align: center; }
+  .user-detail-balance { text-align: center; }
+}
