@@ -1,6 +1,8 @@
 import React from "react";
 import "./Landingpage.css"
+import { useNavigate } from "react-router-dom";
 const LandingPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="main-wrapper"> 
  <div className='hero'>
@@ -20,8 +22,8 @@ const LandingPage = () => {
           <div className="feature">✅ Verified members only</div>
         </div>
           <div className="cta-buttons">
-          <button className="btn btn-primary">Get Started Free</button>
-          <button className="btn btn-secondary">Learn More</button>
+          <button className="btn btn-primary" onClick={()=>(navigate('/login'))}>Get Started Free</button>
+          <button className="btn btn-secondary" onClick={()=>(navigate('/about'))}>Learn More</button>
         </div>
  </div>
            <div className="phone-container">
@@ -168,7 +170,7 @@ const LandingPage = () => {
     <div className="open-left">
       <h2>Ready to experience the future of banking?</h2>
       <p>Open an account in minutes and take control of your finances.</p>
-      <button>Open Account Now</button>
+      <button onClick={()=>(navigate('/register'))}>Open Account Now</button>
     </div>
     <div className="open-right">
       <div className="bank-icon">🏦</div>

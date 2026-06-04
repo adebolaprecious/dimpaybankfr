@@ -69,7 +69,13 @@
   align-items: center;
   gap: 14px;
 }
-
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  backdrop-filter: blur(2px);
+}
 .title-icon {
   font-size: 28px;
   color: #7c3aed;
@@ -424,4 +430,17 @@
   font-family: 'Sora', sans-serif;
   cursor: pointer;
   transition: opacity 0.2s, transform 0.1s;
+}
+@media (max-width: 768px) {
+  .transfer-main { margin-left: 0 !important; }
+
+  .sidebar-wrapper {
+    width: 260px !important;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar-wrapper:not(.collapsed) {
+    transform: translateX(0);
+  }
 }

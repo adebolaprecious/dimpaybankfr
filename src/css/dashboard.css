@@ -17,10 +17,9 @@ body {
 }
 
 .sidebar-overlay {
-  display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 999;
   backdrop-filter: blur(2px);
 }
@@ -307,14 +306,29 @@ body {
   .dashboard-content { padding: 15px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .quick-actions { grid-template-columns: repeat(3, 1fr); }
-  .sidebar-overlay { display: block; }
 
-  /* Show overlay only when sidebar is open */
-  .sidebar-wrapper.collapsed ~ .dashboard-main .sidebar-overlay { display: none; }
+  /* ❌ REMOVE this — don't force overlay visible via CSS */
+  /* .sidebar-overlay { display: block; } */
 }
 
 @media (max-width: 480px) {
   .stats-grid { grid-template-columns: 1fr; }
   .quick-actions { grid-template-columns: repeat(2, 1fr); }
   .stat-info h3 { font-size: 16px; }
+}
+/* ── Sidebar wrapper mobile fix ── */
+@media (max-width: 768px) {
+  .dashboard-main {
+    margin-left: 0 !important;
+  }
+
+  .sidebar-wrapper {
+    width: 260px !important;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar-wrapper:not(.collapsed) {
+    transform: translateX(0);
+  }
 }

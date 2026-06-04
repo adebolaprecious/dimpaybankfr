@@ -9,15 +9,15 @@ import SpendingChart from "../components/SpendingChart";
 import QuickActions from "../components/QuickActions";
 import Heading from "../components/Heading";
 import {
-  FaWallet, FaArrowUp, FaArrowDown, FaPiggyBank,
-  FaExchangeAlt, FaMobileAlt, FaTv, FaMoneyBillWave
+  FaWallet, FaArrowUp, FaArrowDown, FaPiggyBank
 } from "react-icons/fa";
 import "../css/dashboard.css";
 
 const cookies = new Cookies();
 
 const DashboardOverview = () => {
-  const [collapsed, setCollapsed] = useState(true);
+  const isMobile = window.innerWidth <= 768;
+  const [collapsed, setCollapsed] = useState(isMobile); // closed on mobile, open on desktop
   const [wallet, setWallet] = useState(null);
   const [transactions, setTransactions] = useState([]);
 
@@ -52,20 +52,26 @@ const DashboardOverview = () => {
 
   const debitTypes = ["transfer", "withdrawal", "airtime", "data", "gotv", "dstv", "startimes"];
 
-  const totalIn = transactions.filter(t => !debitTypes.includes(t.type?.toLowerCase()))
+  const totalIn = transactions
+    .filter(t => !debitTypes.includes(t.type?.toLowerCase()))
     .reduce((sum, t) => sum + t.amount, 0);
-  const totalOut = transactions.filter(t => debitTypes.includes(t.type?.toLowerCase()))
+  const totalOut = transactions
+    .filter(t => debitTypes.includes(t.type?.toLowerCase()))
     .reduce((sum, t) => sum + t.amount, 0);
 
   return (
     <div className="dashboard">
-      {/* Overlay for mobile */}
-      {!collapsed && <div className="sidebar-overlay" onClick={() => setCollapsed(true)} />}
+      {/* Dark overlay — only on mobile when sidebar is open */}
+      {!collapsed && (
+        <div className="sidebar-overlay" onClick={() => setCollapsed(true)} />
+      )}
 
+      {/* Sidebar wrapper */}
       <div className={`sidebar-wrapper ${collapsed ? "collapsed" : ""}`}>
-        <Sidebar />
+        <Sidebar onClose={() => setCollapsed(true)} />
       </div>
 
+      {/* Main content */}
       <div className="dashboard-main">
         <button className="hamburger-btn" onClick={() => setCollapsed(!collapsed)}>
           {collapsed ? <FaBars /> : <FaTimes />}
@@ -76,7 +82,6 @@ const DashboardOverview = () => {
         <div className="dashboard-content">
           <Outlet />
 
-          {/* Welcome */}
           <div className="welcome-section">
             <div className="welcome-text">
               <h2>Good day, {user?.firstName} 👋</h2>
@@ -84,7 +89,6 @@ const DashboardOverview = () => {
             </div>
           </div>
 
-          {/* Stats */}
           <div className="stats-grid">
             <div className="stat-card balance-card">
               <div className="stat-icon"><FaWallet /></div>
@@ -94,7 +98,6 @@ const DashboardOverview = () => {
               </div>
               <div className="stat-glow" />
             </div>
-
             <div className="stat-card">
               <div className="stat-icon income"><FaArrowDown /></div>
               <div className="stat-info">
@@ -102,7 +105,6 @@ const DashboardOverview = () => {
                 <h3 className="income-text">₦{totalIn.toLocaleString()}</h3>
               </div>
             </div>
-
             <div className="stat-card">
               <div className="stat-icon expense"><FaArrowUp /></div>
               <div className="stat-info">
@@ -110,7 +112,6 @@ const DashboardOverview = () => {
                 <h3 className="expense-text">₦{totalOut.toLocaleString()}</h3>
               </div>
             </div>
-
             <div className="stat-card">
               <div className="stat-icon savings"><FaPiggyBank /></div>
               <div className="stat-info">
@@ -122,7 +123,6 @@ const DashboardOverview = () => {
             </div>
           </div>
 
-          {/* Overview */}
           <div className="overview-grid">
             <RecentTransactions />
             <SpendingChart />

@@ -55,8 +55,8 @@ return (
 
 {/* Buttons inside mobile menu */}
 <div className="mobile-buttons">
-<button className="login-btn">Login</button>
-<button className="Sign-up">Sign Up</button>
+<button className="login-btn" onClick={()=>(navigate('/login'))}>Login</button>
+<button className="Sign-up" onClick={()=>(navigate('/register'))}>Sign Up</button>
 </div>
 </ul>
 

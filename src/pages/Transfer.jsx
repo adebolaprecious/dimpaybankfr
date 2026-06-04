@@ -77,10 +77,13 @@ const TransferMoney = () => {
   };
 
   return (
-    <div className="transfer-page">
-      <div className={`sidebar-wrapper ${collapsed ? "collapsed" : ""}`}>
-        <Sidebar />
-      </div>
+   <div className="transfer-page">
+  {/* Add this line */}
+  {!collapsed && <div className="sidebar-overlay" onClick={() => setCollapsed(true)} />}
+
+  <div className={`sidebar-wrapper ${collapsed ? "collapsed" : ""}`}>
+    <Sidebar onClose={() => setCollapsed(true)} />
+  </div>
 
       <div className="transfer-main">
         <button className="hamburger-btn" onClick={() => setCollapsed(!collapsed)}>

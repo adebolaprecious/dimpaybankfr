@@ -25,6 +25,7 @@ import TransactionHistory from './pages/Transaction'
 import SettingsPage from './pages/Settings'
 import AdminDashboard from './pages/AdminDashboard'
 import AdminRoute from './pages/AdminRoutes'
+import Footer from './components/Footer'
 
 const App = () =>{
     const cookies = new Cookies();
@@ -65,7 +66,7 @@ return(
 
             <Route path="*" element={<NotFound />} />
      </Routes>
-        
+        <Footer /> 
   </>
 )
 }
