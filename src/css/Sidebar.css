@@ -88,3 +88,18 @@ left: 0;
   padding-top: 1rem;
   color: #f59e0b; /* amber — visually distinct */
 }
+.logout-nav {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.admin-link {
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 8px;
+  color: #a78bfa !important;
+}

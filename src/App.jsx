@@ -54,14 +54,15 @@ return(
                 <Route path="/recenttransactions" element={<RecentTransactions />} />
                  <Route path="/transactions" element={<TransactionHistory />} />
                  <Route path="/settings" element={<SettingsPage/>} />
-         </Route>
-
-
-<Route path="/admin" element={
+                 <Route path="/admin" element={
   <AdminRoute>
     <AdminDashboard />
   </AdminRoute>
 } />
+         </Route>
+
+
+
             <Route path="*" element={<NotFound />} />
      </Routes>
         
