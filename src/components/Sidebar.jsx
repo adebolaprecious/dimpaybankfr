@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "../css/sidebar.css";
+import "../css/Sidebar.css";
 import {
   FaHome, FaUserCircle, FaExchangeAlt, FaCreditCard,
   FaMoneyBillWave, FaHandHoldingUsd, FaCog, FaUserShield, FaSignOutAlt
