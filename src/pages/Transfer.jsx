@@ -1,4 +1,4 @@
-import "./Transfer.css";
+import "./transfer.css";
 import { FaUniversity, FaCheckCircle, FaSpinner, FaBars, FaPaperPlane, FaTimes } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import axios from "axios";
